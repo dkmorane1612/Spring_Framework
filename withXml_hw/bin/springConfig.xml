@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+
+<bean id="prof1" class="com.spring.entity.Profile">
+	<property name="profileId" value="101"></property>
+	<property name="creationDate" value="25-03-2021"></property>
+	<property name="perInfo" ref="perDetail1"></property>
+	<property name="eduInfo" ref="eduDetail1"></property>
+</bean>
+
+<bean id="perDetail1" class="com.spring.entity.PersonalDetails">
+	<property name="fName" value="Garauv"></property>
+	<property name="lName" value="Pagar"></property>
+	<property name="email" value="gaurav@gmail.com"></property>
+	<property name="contactNo" value="9637854265"></property>
+	<property name="gender" value="Male"></property>
+	<property name="birthDate" value="17-11-2000"></property>
+	<property name="resAdd" ref="add1"></property>
+</bean>
+
+<bean id="eduDetail1" class="com.spring.entity.EducationalDetails">
+	<property name="qualification" value="BE Civil"></property>
+	<property name="result" value="Pass"></property>
+	<property name="yearOfPassing" value="2018"></property>
+</bean>
+
+<bean id="add1" class="com.spring.entity.Address">
+	<property name="street" value="MG Road"></property>
+	<property name="city" value="Nashik"></property>
+	<property name="country" value="India"></property>
+	<property name="pinCode" value="423208"></property>
+</bean>
+
+
+<bean id="prof2" class="com.spring.entity.Profile">
+	<property name="profileId" value="102"></property>
+	<property name="creationDate" value="28-03-2022"></property>
+	<property name="perInfo" ref="perDetail1"></property>
+	<property name="eduInfo" ref="eduDetail1"></property>
+</bean>
+
+<bean id="perDetail2" class="com.spring.entity.PersonalDetails">
+	<property name="fName" value="Shivam"></property>
+	<property name="lName" value="More"></property>
+	<property name="email" value="shivam@gmail.com"></property>
+	<property name="contactNo" value="7890854265"></property>
+	<property name="gender" value="Male"></property>
+	<property name="birthDate" value="12-08-1999"></property>
+	<property name="resAdd" ref="add1"></property>
+</bean>
+
+<bean id="eduDetail2" class="com.spring.entity.EducationalDetails">
+	<property name="qualification" value="BE ENTC"></property>
+	<property name="result" value="Pass with Distinction"></property>
+	<property name="yearOfPassing" value="2022"></property>
+</bean>
+
+<bean id="add2" class="com.spring.entity.Address">
+	<property name="street" value="Gangapur Road"></property>
+	<property name="city" value="Nashik"></property>
+	<property name="country" value="India"></property>
+	<property name="pinCode" value="443209"></property>
+</bean>
+
+<bean id="prof3" class="com.spring.entity.Profile" scope="prototype">
+	<constructor-arg name="profileId" value="103" ></constructor-arg>
+	<constructor-arg name="creationDate" value="18-07-2020"></constructor-arg>
+	<constructor-arg name="perInfo" ref="perDetail3"></constructor-arg>
+	<constructor-arg name="eduInfo" ref="eduDetail3"></constructor-arg>
+</bean>
+
+<bean id="perDetail3" class="com.spring.entity.PersonalDetails" scope="prototype">
+	<constructor-arg name="fName" value="Niraj" ></constructor-arg>
+	<constructor-arg name="lName" value="fegade"></constructor-arg>
+	<constructor-arg name="email" value="nirajfeg@gmail.com"></constructor-arg>
+	<constructor-arg name="contactNo" value="9998854005"></constructor-arg>
+	<constructor-arg name="gender" value="Male"></constructor-arg>
+	<constructor-arg name="birthDate" value="16-05-2003"></constructor-arg>
+	<constructor-arg name="resAdd" ref="add3"></constructor-arg>
+</bean>
+
+<bean id="eduDetail3" class="com.spring.entity.EducationalDetails" scope="prototype">
+	<constructor-arg name="qualification" value="BCS"></constructor-arg>
+	<constructor-arg name="result" value="Pass A+"></constructor-arg>
+	<constructor-arg name="yearOfPassing" value="2023"></constructor-arg>
+</bean>
+
+<bean id="add3" class="com.spring.entity.Address" scope="prototype">
+	<constructor-arg name="street" value="JM Road"></constructor-arg>
+	<constructor-arg name="city" value="Pune"></constructor-arg>
+	<constructor-arg name="country" value="India"></constructor-arg>
+	<constructor-arg name="pinCode" value="403109"></constructor-arg>
+</bean>
+
+</beans>

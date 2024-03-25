@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+
+<bean id="stud1" class="com.spring.entities.Student">
+	<property name="studId" value="122"></property>
+	<property name="studName" value="Durgadas"></property>
+	<property name="age" value="23"></property>
+	<property name="resAdd" ref="add1"></property>
+</bean>
+
+<bean id="add1" class="com.spring.entities.Address">
+	<property name="street" value="MG Road"></property>
+	<property name="city" value="Nashik"></property>
+	<property name="state" value="Maharashtra"></property>
+	<property name="country" value="India"></property>
+	<property name="pinCode" value="423204"></property>
+</bean>
+
+<bean id="stud2" class="com.spring.entities.Student" scope="prototype">
+	<constructor-arg name="studId" value="126" ></constructor-arg>
+	<constructor-arg name="studName" value="Praful"></constructor-arg>
+	<constructor-arg name="age" value="24"></constructor-arg>
+	<constructor-arg name="resAdd" ref="add2"></constructor-arg>
+</bean>
+
+<bean id="add2" class="com.spring.entities.Address" scope="prototype" >
+	<constructor-arg name="street" value="JM Road"></constructor-arg>
+	<constructor-arg name="city" value="Pune"></constructor-arg>
+	<constructor-arg name="state" value="Maharashtra" ></constructor-arg>
+	<constructor-arg name="country" value="India"></constructor-arg>
+	<constructor-arg name="pinCode" value="403103"></constructor-arg>
+</bean>
+
+</beans>
